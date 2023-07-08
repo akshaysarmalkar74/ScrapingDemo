@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Players</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Player List</h1>
+
+    <div id="container">
+        <% for (let player of players) { %>
+            <div class="card">
+                <div class="flex-wrapper">
+                    <p class="mr-1">Player Name - </p>
+                    <p class="player-name"><%= player.first_name %> <%= player.last_name %></p>
+                </div>
+        
+                <div class="flex-wrapper">
+                    <p class="mr-1">Player Position - </p>
+                    <% if (player.position) { %>
+                        <p class="player-position"><%= player.position %></p>
+                    <% } else { %>
+                        <p class="player-position">Unknown</p>
+                    <% } %>
+                </div>
+        
+                <div class="flex-wrapper">
+                    <p class="mr-1">Player Team Name - </p>
+                    <p class="player-team-name"><%= player.team.full_name %></p>
+                </div>
+        
+                <div class="flex-wrapper">
+                    <p class="mr-1">Player Team Division - </p>
+                    <p class="player-team-division"><%= player.team.division %></p>
+                </div>
+            </div>
+        <% } %>
+    </div>
+    
+</body>
+</html>
